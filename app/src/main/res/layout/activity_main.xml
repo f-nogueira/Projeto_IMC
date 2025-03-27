@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/imgapp">
+
+    <!-- Campo para o Peso -->
+
+    <ImageView
+        android:layout_width="167dp"
+        android:layout_height="161dp"
+        android:gravity="center"
+        android:src="@drawable/iconebom"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <EditText
+        android:id="@+id/edtPeso"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Peso (kg)"
+        android:inputType="numberDecimal"
+        android:background="@drawable/css"
+        android:padding="10dp"
+        app:marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="250dp"/>
+
+    <!-- Campo para a Altura -->
+    <EditText
+        android:id="@+id/edtAltura"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:hint="Altura (m)"
+        android:inputType="numberDecimal"
+        android:background="@drawable/css"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtPeso"
+        android:layout_marginTop="15dp"/>
+
+    <!-- Botão para Calcular IMC -->
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular IMC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtAltura"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Exibição do Resultado -->
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCalcular"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
