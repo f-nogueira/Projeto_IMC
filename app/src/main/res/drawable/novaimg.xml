@@ -5,7 +5,7 @@
     <corners android:radius="16dp"/>
     <stroke android:color="#000000" android:width="2dp"/>
     <bitmap
-        android:src="@drawable/your_image"
+        android:src="@drawable/novaimg"
     android:tileMode="disabled"
     android:gravity="center" />
 </shape>
