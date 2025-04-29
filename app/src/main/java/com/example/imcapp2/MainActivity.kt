@@ -2,6 +2,7 @@ package com.example.imcapp2
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             AppDatabase::class.java,
             "imc_database"
-        ).build()
+        )
+            .fallbackToDestructiveMigration() // Adicionado fallbackToDestructiveMigration
+            .build()
 
         val edtPeso: EditText = findViewById(R.id.edtPeso)
         val edtAltura: EditText = findViewById(R.id.edtAltura)
@@ -67,12 +70,19 @@ class MainActivity : AppCompatActivity() {
     // Função para salvar o IMC no banco de dados
     private fun salvarImc(peso: Float, altura: Float, imc: Float) {
         lifecycleScope.launch {
+            Log.d("SalvarImc", "Iniciando salvamento: peso=$peso, altura=$altura, imc=$imc")
             val imcEntity = ImcEntity(
-                idade = 0, // Ainda não pega idade, deixamos 0
+                altura = altura, // Corrigi aqui para usar a altura calculada
                 peso = peso,
                 imc = imc
             )
-            db.Dao().insert(imcEntity)
+            Log.d("SalvarImc", "Entidade criada: $imcEntity")
+            try {
+                db.Dao().insert(imcEntity)
+                Log.d("SalvarImc", "Salvo no banco de dados com sucesso")
+            } catch (e: Exception) {
+                Log.e("SalvarImc", "Erro ao salvar no banco de dados: ${e.localizedMessage}", e)
+            }
         }
     }
 }

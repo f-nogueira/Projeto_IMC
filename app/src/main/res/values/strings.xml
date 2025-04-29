@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">IMC APP 2</string>
+    <string name="peso_label">Peso:</string>
+    <string name="imc_label">IMC:</string>
+    <string name="editar">Editar item</string>
+    <string name="excluir">Excluir item</string>
 </resources>
