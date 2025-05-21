@@ -49,7 +49,8 @@ Execute o projeto a partir da IDE ou via terminal com Gradle:
 
 ./gradlew build
 
-📌 Observações
+## 📌 Observações
+
 Este projeto serve como exemplo educacional e pode ser expandido com funcionalidades adicionais como validação de entrada, interface gráfica, entre outras.
 
 Atualmente, não há interface gráfica (GUI); o projeto pode rodar via terminal, dependendo da implementação em Main.kt.
